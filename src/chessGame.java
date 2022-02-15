@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//playing chess game through cmd
 public class chessGame{
     public static void main(String[] args) {
         //ask users' name
