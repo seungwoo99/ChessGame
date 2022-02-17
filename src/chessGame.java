@@ -11,7 +11,7 @@ public class chessGame {
         System.out.print("What is your opponent's name? ");
         String player2 = input.nextLine();
 
-        //set player1's pieces
+        // set player1's pieces
         Piece player1_Rook1 = new Piece(player1, player1 + "_Rook1", 0, 0);
         Piece player1_Knight1 = new Piece(player1, player1 + "_Knight1", 0, 1);
         Piece player1_Bishop1 = new Piece(player1, player1 + "_Bishop1", 0, 2);
