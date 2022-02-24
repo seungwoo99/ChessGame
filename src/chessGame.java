@@ -101,19 +101,35 @@ public class chessGame {
                         }
                     }
                     //if Rook is selected
-                }else if(gameboard[x][y].getPieceName().equals(player1_Rook.getPieceName())){
-                    boolean cannot_move=true;
-                    while(cannot_move) {
+                }else if(gameboard[x][y].getPieceName().equals(player1_Rook.getPieceName())) {
+                    boolean cannot_move = true;
+                    while (cannot_move) {
                         System.out.print(player1 + ", where do you want to move? Enter the coordinate(ex. 3,D) ");
                         String[] destinationCo = input.nextLine().split(",");
                         int destinationY = changeYtoInt(destinationCo[1]);
-                        gameboard = player1_Rook.calRookA(gameboard, x, y, 8-Integer.parseInt(destinationCo[0]), destinationY);
-                        if(gameboard[x][y].getPieceName().equals(player1_Rook.getPieceName())){
+                        gameboard = player1_Rook.calRook(gameboard, x, y, 8 - Integer.parseInt(destinationCo[0]), destinationY);
+                        if (gameboard[x][y].getPieceName().equals(player1_Rook.getPieceName())) {
                             System.out.println("Wrong destination. Try again.");
                             continue;
-                        }else{
+                        } else {
                             cannot_move = false;
-                            player1_time =false;
+                            player1_time = false;
+                        }
+                    }
+                    //if Knight is selected
+                }else if(gameboard[x][y].getPieceName().equals(player1_Knight.getPieceName())){
+                    boolean cannot_move = true;
+                    while (cannot_move) {
+                        System.out.print(player1 + ", where do you want to move? Enter the coordinate(ex. 3,D) ");
+                        String[] destinationCo = input.nextLine().split(",");
+                        int destinationY = changeYtoInt(destinationCo[1]);
+                        gameboard = player1_Rook.calKnight(gameboard, x, y, 8 - Integer.parseInt(destinationCo[0]), destinationY);
+                        if (gameboard[x][y].getPieceName().equals(player1_Knight.getPieceName())) {
+                            System.out.println("Wrong destination. Try again.");
+                            continue;
+                        } else {
+                            cannot_move = false;
+                            player1_time = false;
                         }
                     }
                 }

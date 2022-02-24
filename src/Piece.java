@@ -63,8 +63,8 @@ public class Piece {
             return board;
         }
     }
-    //method that calculates rook moves
-    public Piece[][] calRookA(Piece[][] board, int current_x, int current_y, int wanted_x, int wanted_y){
+    //method that calculates Rook moves
+    public Piece[][] calRook(Piece[][] board, int current_x, int current_y, int wanted_x, int wanted_y){
         boolean check1 = (current_y == wanted_y)&&(wanted_x>=0 && wanted_x<8)&&(current_x!=wanted_x);
         boolean check2 = (current_x == wanted_x)&&(wanted_y>=0 && wanted_y<8)&&(current_y!=wanted_y);
         somethingbetween=0;
@@ -130,4 +130,36 @@ public class Piece {
         }
         return board;
     }
+
+    //method that calculates Knight moves
+    public Piece[][] calKnight(Piece[][] board, int current_x, int current_y, int wanted_x, int wanted_y){
+        boolean check1 = (0<=wanted_x && wanted_x<8) && (0<=wanted_y && wanted_y<8);
+        if(check1){
+            if(current_x - 2 == wanted_x && (current_y - 1 == wanted_y || current_y+1 == wanted_y)){
+                board[wanted_x][wanted_y] = board[current_x][current_y];
+                board[current_x][current_y] = new Piece(current_x, current_y);
+            }else if((current_x-1 == wanted_x || current_x+1 == wanted_x) && current_y+2 == wanted_y){
+                board[wanted_x][wanted_y] = board[current_x][current_y];
+                board[current_x][current_y] = new Piece(current_x, current_y);
+            }else if(current_x+2==wanted_x && (current_y-1 == wanted_y || current_y+1 == wanted_y)){
+                board[wanted_x][wanted_y] = board[current_x][current_y];
+                board[current_x][current_y] = new Piece(current_x, current_y);
+            }else if((current_x-1==wanted_x || current_x+1==wanted_x) && current_y-2 == wanted_y){
+                board[wanted_x][wanted_y] = board[current_x][current_y];
+                board[current_x][current_y] = new Piece(current_x, current_y);
+            }
+        }
+        return board;
+    }
+
+    //method that calculates Bishop moves
+    public Piece[][] calBishop(Piece[][] board, int current_x, int current_y, int wanted_x, int wanted_y){
+        boolean check1 = (0<=wanted_x && wanted_x<8) && (0<=wanted_y && wanted_y<8);
+        if(check1){
+
+        }
+
+        return board;
+    }
+
 }
