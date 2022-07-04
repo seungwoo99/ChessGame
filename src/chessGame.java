@@ -360,7 +360,8 @@ public class chessGame {
 
     //method that change alphabet to integer
     public static int changeYtoInt (String inputY){
-        if (inputY.toUpperCase().equals("A")) {
+        inputY = inputY.toUpperCase();
+        if (inputY.equals("A")) {
             integerY = 0;
         } else if (inputY.equals("B")) {
             integerY = 1;
