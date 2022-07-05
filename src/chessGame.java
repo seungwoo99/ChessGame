@@ -76,17 +76,16 @@ public class chessGame {
 
             //player1's time
             boolean player1_time = true;
+            //check player1's king is alive
+            if(KingDead(player1, gameboard)){
+                System.out.println(player1 + "'s king is dead. "+ player2 + " won!");
+                king_alive = false;
+                player1_time = false;
+                continue;
+            }
             while (player1_time) {
-                //check player1's king is alive
-                if(KingDead(player1, gameboard)){
-                    System.out.println(player1 + "'s king is dead. "+ player2 + " won!");
-                    king_alive = false;
-                    player1_time = false;
-                    continue;
-                }
-
-                //ask user player1 to select his piece
                 try{
+                    //ask user player1 to select his piece
                     System.out.print(player1 + ", what do you want to move? Enter the piece's coordinate(ex. 2,C) ");
                     String[] inputCo = input.nextLine().split(",");
                     int x = 8-Integer.parseInt(inputCo[0]);
@@ -218,7 +217,7 @@ public class chessGame {
             //player2's time
             boolean player2_time = true;
             while(player2_time){
-                //check player1's king is alive
+                //check player2's king is alive
                 if(KingDead(player2, gameboard)){
                     //announce that player2's king is dead
                     System.out.println(player2 + "'s king is dead. "+ player1 + " won!");
